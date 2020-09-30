@@ -42,7 +42,7 @@ export default function Log() {
       <Row>
         <Col>
           <Card>
-            <Card.Header as="h5">Clerk Log Information</Card.Header>
+            <Card.Header as="h5">Clerk Update Log</Card.Header>
 
             <ListGroup>{messageItems}</ListGroup>
           </Card>

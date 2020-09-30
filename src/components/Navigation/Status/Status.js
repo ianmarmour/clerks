@@ -1,25 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useInterval } from "../../helpers/hooks";
+import React, { useState } from "react";
+import { useInterval } from "../../../helpers/hooks";
 import Spinner from "react-bootstrap/Spinner";
-import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
-
-function intro() {
-  return (
-    <Card>
-      <Card.Header as="h5">Welcome</Card.Header>
-      <Card.Body>
-        <Card.Title>What is Clerks</Card.Title>
-        <Card.Text>
-          Clerks.app is a UI that consumers can use with their buy and
-          monitoring bots to simplify the setup, configuration and monitoring
-          without needing their development teams to design their own UI.
-        </Card.Text>
-      </Card.Body>
-    </Card>
-  );
-}
 
 function serverStatus(health) {
   if (!health) {
@@ -44,7 +26,7 @@ function serverStatus(health) {
   }
 }
 
-export default function Start() {
+export default function Status() {
   const [state, setState] = useState("");
 
   useInterval(async () => {
@@ -55,5 +37,5 @@ export default function Start() {
       });
   }, 500);
 
-  return <div></div>;
+  return <div>{serverStatus(state)}</div>;
 }

@@ -11,8 +11,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Router>
+    <Router>
+      <div className="App">
         <Navigation />
         <Container>
           <Switch>
@@ -27,8 +27,8 @@ function App() {
             </Route>
           </Switch>
         </Container>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 
